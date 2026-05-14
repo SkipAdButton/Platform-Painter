@@ -544,6 +544,20 @@
                 player.x = 150
                 player.y = 580
                 player.platformLimit = 3
+            } else if (level == 10) {
+                player.lockMovement = true
+                setTimeout((e) => { player.lockMovement = false }, 500)
+                platforms.splice(0, platforms.length)
+                evilPlatforms.splice(0, evilPlatforms.length)
+				evilPlatforms.push(new EvilPlatform(0 - canvas.width, canvas.height + 100, canvas.width + canvas.width, canvas.height + 1000));
+                text = "You Win!"
+
+                platforms.push(new Platform(canvas.height/2 - 50, 600, canvas.height/2 + 50, 700));
+
+                flag = new Flag(2000, 2000)
+                player.x = 150
+                player.y = 580
+                player.platformLimit = 10000
             }
         }
 
