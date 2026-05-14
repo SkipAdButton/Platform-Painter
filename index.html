@@ -340,30 +340,37 @@
 
         function placePlatform(x1, y1, x2, y2) {
 
-            const newPlatform = platformInfo({ x1, y1, x2, y2 });
+    		const newPlatform = platformInfo({ x1, y1, x2, y2 });
 
-            const conflicts =
-                mouse.savedX1 == undefined ||
-                mouse.savedY1 == undefined ||
-                mouse.savedX2 == undefined ||
-                mouse.savedY2 == undefined ||
+    		const overlapsPlayer =
+     		   	newPlatform.left < player.x + player.size &&
+        		newPlatform.right > player.x &&
+        		newPlatform.top < player.y + player.size &&
+        		newPlatform.bottom > player.y;
 
-                evilPlatforms.some(platform => {
-                    const evil = platformInfo(platform);
+    		const overlapsEvil = evilPlatforms.some(platform => {
+        		const evil = platformInfo(platform);
 
-                    return (
-                        newPlatform.left < evil.right &&
-                        newPlatform.right > evil.left &&
-                        newPlatform.top < evil.bottom &&
-                        newPlatform.bottom > evil.top
-                    );
-                });
+        		return (
+        	    newPlatform.left < evil.right &&
+        	    newPlatform.right > evil.left &&
+        	    newPlatform.top < evil.bottom &&
+        	    newPlatform.bottom > evil.top
+        	);});
 
-            if (!conflicts && player.platformLimit > 0) {
-                platforms.push(new Platform(x1, y1, x2, y2));
-                player.platformLimit--;
-            }
-        }
+    		const conflicts =
+        		mouse.savedX1 == undefined ||
+        		mouse.savedY1 == undefined ||
+        		mouse.savedX2 == undefined ||
+        		mouse.savedY2 == undefined ||
+        		overlapsPlayer ||
+        		overlapsEvil;
+
+    		if (!conflicts && player.platformLimit > 0) {
+    		    platforms.push(new Platform(x1, y1, x2, y2));
+    		    player.platformLimit--;
+    		}
+		}
 
         function playerPlatformCol(platform) {
             return (
