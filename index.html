@@ -397,6 +397,8 @@
                 setTimeout((e) => { player.lockMovement = false }, 500)
                 platforms.splice(0, platforms.length)
                 evilPlatforms.splice(0, evilPlatforms.length)
+				evilPlatforms.push(new EvilPlatform(0 - canvas.width, canvas.height + 100, canvas.width + canvas.width, canvas.height + 1000));
+
                 text = "Move with [A D] or [ARROW KEYS]."
 
                 platforms.push(new Platform(0, canvas.height * 6 / 8, canvas.width, canvas.height));
@@ -410,6 +412,7 @@
                 setTimeout((e) => { player.lockMovement = false }, 500)
                 platforms.splice(0, platforms.length)
                 evilPlatforms.splice(0, evilPlatforms.length)
+				evilPlatforms.push(new EvilPlatform(0 - canvas.width, canvas.height + 100, canvas.width + canvas.width, canvas.height + 1000));
                 text = "Jump with [SPACE]."
 
                 platforms.push(new Platform(0, canvas.height * 6 / 8, canvas.width, canvas.height));
@@ -424,6 +427,7 @@
                 setTimeout((e) => { player.lockMovement = false }, 500)
                 platforms.splice(0, platforms.length)
                 evilPlatforms.splice(0, evilPlatforms.length)
+				evilPlatforms.push(new EvilPlatform(0 - canvas.width, canvas.height + 100, canvas.width + canvas.width, canvas.height + 1000));
                 platforms.push(new Platform(50, 500, 250, 600));
                 platforms.push(new Platform(1050, 500, 1250, 600));
                 flag = new Flag(1150, 480)
@@ -436,6 +440,7 @@
                 setTimeout((e) => { player.lockMovement = false }, 500)
                 platforms.splice(0, platforms.length)
                 evilPlatforms.splice(0, evilPlatforms.length)
+				evilPlatforms.push(new EvilPlatform(0 - canvas.width, canvas.height + 100, canvas.width + canvas.width, canvas.height + 1000));
                 text = "Hold space into a wall to wall-jump. TIP: Only hold space while wall-jumping."
 
                 platforms.push(new Platform(0, canvas.height * 6 / 8, canvas.width / 3, canvas.height));
@@ -456,6 +461,7 @@
                 setTimeout((e) => { player.lockMovement = false }, 500)
                 platforms.splice(0, platforms.length)
                 evilPlatforms.splice(0, evilPlatforms.length)
+				evilPlatforms.push(new EvilPlatform(0 - canvas.width, canvas.height + 100, canvas.width + canvas.width, canvas.height + 1000));
                 text = "1. Simple jumps. TIP: Press R to reset"
 
                 platforms.push(new Platform(100, canvas.height - 100, 200, canvas.height - 200));
@@ -472,6 +478,7 @@
                 setTimeout((e) => { player.lockMovement = false }, 500)
                 platforms.splice(0, platforms.length)
                 evilPlatforms.splice(0, evilPlatforms.length)
+				evilPlatforms.push(new EvilPlatform(0 - canvas.width, canvas.height + 100, canvas.width + canvas.width, canvas.height + 1000));
                 text = "2. Roundabout. TIP: You cannot draw over red platforms"
 
                 platforms.push(new Platform(0, 150, 200, 250));
@@ -488,6 +495,7 @@
                 setTimeout((e) => { player.lockMovement = false }, 500)
                 platforms.splice(0, platforms.length)
                 evilPlatforms.splice(0, evilPlatforms.length)
+				evilPlatforms.push(new EvilPlatform(0 - canvas.width, canvas.height + 100, canvas.width + canvas.width, canvas.height + 1000));
                 text = "3. Low Blow."
 
                 platforms.push(new Platform(100, 400, 200, 500));
@@ -508,6 +516,7 @@
                 setTimeout((e) => { player.lockMovement = false }, 500)
                 platforms.splice(0, platforms.length)
                 evilPlatforms.splice(0, evilPlatforms.length)
+				evilPlatforms.push(new EvilPlatform(0 - canvas.width, canvas.height + 100, canvas.width + canvas.width, canvas.height + 1000));
                 text = "4. Make it count."
 
                 platforms.push(new Platform(0, canvas.height - 150, canvas.width, canvas.height));
@@ -523,6 +532,7 @@
                 setTimeout((e) => { player.lockMovement = false }, 500)
                 platforms.splice(0, platforms.length)
                 evilPlatforms.splice(0, evilPlatforms.length)
+				evilPlatforms.push(new EvilPlatform(0 - canvas.width, canvas.height + 100, canvas.width + canvas.width, canvas.height + 1000));
                 text = "5. Up & Under."
 
                 platforms.push(new Platform(100, 600, 300, 650));
